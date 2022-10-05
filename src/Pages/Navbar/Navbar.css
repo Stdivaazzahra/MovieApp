@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=Cabin:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Audiowide&display=swap");
+
+.navbar_wrap {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  z-index: 1;
+  position: fixed;
+  overflow: hidden;
+  /* height: 50px; */
+  /* height: 70px; */
+}
+
+.navbar {
+  font-family: "Cabin", sans-serif;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /* padding: 5px 20px; */
+  padding: 0.3rem 3rem;
+  background-color: rgba(255, 255, 255, 0.223);
+}
+
+.Navbar_Title {
+  text-decoration: none;
+  font-family: "Audiowide", cursive;
+  color: rgb(182, 24, 24);
+  transition: all 0.2s linear;
+  text-shadow: 4px 2px 5px rgb(0, 0, 0);
+}
+
+.Navbar_Title:hover {
+  text-shadow: 2px 3px 7px rgba(255, 3, 3, 0.589);
+}
+
+/* .Navbar_search button {
+  border: solid rgb(182, 24, 24);
+  border-radius: 15px;
+  padding: 7px 50px;
+  font-family: "Cabin", sans-serif;
+} */
+
+.Navbar_search {
+  width: 30%;
+  border: 3px solid;
+  /* padding: 10px; */
+  background-color: rgba(255, 255, 255, 0);
+  border-color: rgb(182, 24, 24);
+  border-radius: 20px;
+  display: flex;
+  justify-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.Navbar_search:hover {
+  box-shadow: 5px 5px 10px rgba(255, 3, 3, 0.589);
+}
+
+.search_btn {
+  display: flex;
+  /* flex-wrap: wrap; */
+  /* padding: 0 30px; */
+}
+
+.search_btn input {
+  background-color: transparent;
+  border: none;
+  border-radius: 0.4rem;
+  width: 22rem;
+  font-size: 0.9rem;
+  font-family: "Cabin", sans-serif;
+  /* color: white; */
+}
+
+input[type="text"]:focus {
+  outline: none;
+  /* color: white; */
+}
+
+.search_btn button {
+  font-size: 1.3rem;
+  padding-top: 0.3rem;
+  background-color: transparent;
+  border: none;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  /* text-decoration: none; */
+  /* color: white; */
+}
+
+.navbar_icon {
+  color: rgb(222, 209, 209);
+}
+
+.navbar_bottom {
+  display: flex;
+  flex-direction: row;
+  cursor: pointer;
+}
+
+.login {
+  color: rgb(182, 24, 24);
+  border: solid rgb(182, 24, 24);
+  padding: 7px 30px;
+  border-radius: 20px;
+  margin-right: 20px;
+  transition: all 0.2s linear;
+}
+.login:hover {
+  background-color: rgb(182, 24, 24);
+  color: white;
+  box-shadow: 5px 5px 10px rgba(255, 3, 3, 0.589);
+}
+
+.register {
+  background-color: rgb(182, 24, 24);
+  color: white;
+  border: solid rgb(182, 24, 24);
+  padding: 7px 30px;
+  border-radius: 20px;
+  transition: all 0.2s linear;
+}
+.register:hover {
+  background-color: rgba(182, 24, 24, 0.284);
+  color: white;
+  box-shadow: 3px 3px 10px rgba(255, 3, 3, 0.589);
+}
