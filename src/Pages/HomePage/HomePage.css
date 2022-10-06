@@ -45,6 +45,8 @@
 }
 
 .yt {
+  display: flex;
+  align-items: center;
   position: absolute;
   font-size: 13px;
   font-weight: bold;
@@ -54,19 +56,23 @@
   border-radius: 25px;
   flex-direction: row;
   cursor: pointer;
+  transition: all 0.2s linear;
+}
+
+.yt:hover {
+  box-shadow: 5px 5px 10px rgba(255, 3, 3, 0.589);
 }
 
 .yt a {
   text-decoration: none;
   color: white;
-  padding-left: 2rem;
+  padding-left: 1rem;
   /* padding-top: 3rem; */
 }
 
-.icon_play {
-  position: absolute;
-  /* padding-top: 0; */
-  font-size: 1.2rem;
+.icon_play_home {
+  /* color: black; */
+  font-size: 1.5rem;
 }
 
 .popular_wrap {
@@ -91,23 +97,22 @@
 }
 
 .All_Movie h2 {
-  /* justify-items: center; */
-
-  font-family: "Cabin", sans-serif;
-  text-decoration: none;
-  color: black;
-}
-
-.All_Movie h2:hover {
-  text-shadow: 1px 2px 10px rgb(181, 120, 120);
-}
-/* .seeAll_text {
+  display: flex;
   justify-items: center;
   font-family: "Cabin", sans-serif;
   text-decoration: none;
   color: black;
-  text-shadow: 1px 2px 10px rgb(182, 173, 173);
-} */
+  transition: all 0.2s linear;
+}
+
+.All_Movie h2:hover {
+  text-shadow: 1px 1px 10px rgba(255, 0, 0, 0.836);
+}
+
+.Arrow_icon {
+  font-size: 1.7rem;
+  margin-left: 0.5rem;
+}
 
 .Popular_item {
   /* width: 100%; */
@@ -117,7 +122,7 @@
   justify-content: center;
   gap: 1rem;
   /* padding: 10px 55px; */
-  padding: 1rem 2.5rem;
+  padding: 1rem 2rem 2.5rem 2.5rem;
   /* width: 20px; */
 }
 
@@ -131,12 +136,17 @@
   text-decoration: none;
   color: black;
   padding: 5px;
-  padding: 5px;
+  transition: all 0.2s linear;
+}
+
+.Popular_menu:hover {
+  box-shadow: 2px 3px 7px rgba(255, 3, 3, 0.589);
 }
 
 .Popular_menu div {
   width: 100%;
   font-family: "Cabin", sans-serif;
+  cursor: pointer;
   /* justify-content: center; */
   /* padding: 7px; */
   /* position: absolute; */
@@ -160,4 +170,33 @@ div.img_path {
 .Popular_menu h4 {
   font-size: 12px;
   text-align: center;
+}
+
+div.CateBtn_Wrap {
+  /* width: 100%; */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 2rem 2rem 3rem;
+}
+
+.cate_btn button {
+  /* color: rgb(182, 24, 24); */
+  width: 8.3rem;
+  font-family: "Cabin", sans-serif;
+  font-size: 0.9rem;
+  border: solid rgb(182, 24, 24);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  margin-right: 1rem;
+  transition: all 0.2s linear;
+  cursor: pointer;
+  text-shadow: 1px 2px 10px rgb(182, 173, 173);
+}
+
+.cate_btn button:hover {
+  background-color: rgb(182, 24, 24);
+  color: white;
+  box-shadow: 5px 5px 10px rgba(255, 3, 3, 0.589);
 }
