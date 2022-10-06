@@ -130,13 +130,18 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  align-self: center;
+  /* align-self: center; */
   border-radius: 10px;
   border: 3px solid rgba(176, 37, 37, 0.4);
   text-decoration: none;
   color: black;
   padding: 5px;
   transition: all 0.2s linear;
+}
+
+div.Popular_menu {
+  height: 27rem;
+  width: 25rem;
 }
 
 .Popular_menu:hover {
@@ -160,6 +165,7 @@ div.img_path {
 .img_path img {
   /* padding: 5px; */
   padding: 0.3rem;
+  width: 15rem;
 }
 
 .Popular_menu h3 {
@@ -200,3 +206,36 @@ div.CateBtn_Wrap {
   color: white;
   box-shadow: 5px 5px 10px rgba(255, 3, 3, 0.589);
 }
+
+div.swiper {
+  height: 100%;
+  padding: 1rem 2rem 2.5rem 2.5rem;
+  margin: 0;
+}
+
+.swiper-slide {
+  text-align: center;
+  /* font-size: 18px; */
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+/* .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+} */

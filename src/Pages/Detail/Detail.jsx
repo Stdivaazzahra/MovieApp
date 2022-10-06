@@ -6,6 +6,18 @@ import { BiStar } from 'react-icons/bi';
 import { AiOutlinePlayCircle } from 'react-icons/ai';
 import { RiCloseCircleLine } from 'react-icons/ri';
 
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+
+// import "./styles.css";
+
+// import required modules
+import { Autoplay, Pagination, Navigation } from "swiper";
+
 const Detail = () => {
 
     const[data, setData] = useState()
@@ -21,7 +33,7 @@ const Detail = () => {
     const API_IMG = "https://image.tmdb.org/t/p/w500/";
 
     const LINK_VIDEO_API = `https://api.themoviedb.org/3/movie/${id}/videos?api_key=9cc1bc46ae7070abb9a43667213d613a&language=en-US`
-
+    
     const API_Cast = `https://api.themoviedb.org/3/movie/${id}/credits?api_key=9cc1bc46ae7070abb9a43667213d613a`
 
     console.log(id)
@@ -84,24 +96,48 @@ const Detail = () => {
         </div>
 
 
+
         <div className="cast">
             <div className="Cast_Text">
                 <h1> Cast and Crew Info</h1>
             </div>
+        
+        <Swiper
+            slidesPerView={5}
+            spaceBetween={30}
+            slidesPerGroup={1}
+            loop={true}
+            loopFillGroupWithBlank={true}
+            pagination={{
+            clickable: true,
+            }}
+            navigation={true}
+            modules={[Autoplay, Pagination, Navigation]}
+            autoplay={{
+                delay: 3500,
+                disableOnInteraction: false,
+            }}
+            className="mySwiper"
+        >
+
+
             <div className='cast_wrap'>
             {
                 cast ? cast.map(e=>{
                     return (
-                    <div className="cast_menu">
-                        <div className="img_cast">
-                            <img src={API_IMG+`${e.profile_path}`} alt="IMG Cast" />
-                        </div>
+                        <SwiperSlide>
+                            <div className="cast_menu">
+                                <div className="img_cast">
+                                    <img src={API_IMG+`${e.profile_path}`} alt="IMG Cast" />
+                                </div>
 
-                        <div className="cast_text">
-                            <h2>{e.name}</h2>
-                            <h3>{e.character}</h3>
-                        </div>
-                    </div>
+                                <div className="cast_text">
+                                    <h2>{e.name}</h2>
+                                    <h3>{e.character}</h3>
+                                </div>
+                            </div>
+                        </SwiperSlide>
+                       
 
                     )
 
@@ -110,7 +146,9 @@ const Detail = () => {
                 <h2>Loading...</h2>
             }
         </div>
+        </Swiper>
         </div>
+    
 
     </div>
     

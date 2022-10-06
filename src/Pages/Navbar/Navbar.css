@@ -8,7 +8,7 @@
   /* z-index: 1; */
   position: fixed;
   overflow: hidden;
-  z-index: 9999;
+  z-index: 999;
   /* height: 50px; */
   /* height: 70px; */
 }
