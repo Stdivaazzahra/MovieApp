@@ -24,11 +24,13 @@ const HomePage = () => {
     const API_IMG = "https://image.tmdb.org/t/p/w500/";
     const API_POPULAR = `https://api.themoviedb.org/3/discover/movie?api_key=9cc1bc46ae7070abb9a43667213d613a&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=2&with_watch_monetization_types=flatrate`
     // const API_Cate = `https://api.themoviedb.org/3/movie/${id}?api_key=9cc1bc46ae7070abb9a43667213d613a&language=en-US`
+    const API_Cate = "https://api.themoviedb.org/3/genre/movie/list?api_key=9cc1bc46ae7070abb9a43667213d613a&language=en-US"
 //UseState
 //UseEffect
 //axios
 const navigate = useNavigate()
 const [data, setData] = useState()
+const [cate, setCate] = useState()
 
 useEffect(()=> {
     axios.get(API_POPULAR)
@@ -42,8 +44,22 @@ useEffect(()=> {
     .catch(err => console.log(err))
 },[API_POPULAR])
 
+useEffect(() => {
+  axios.get(API_Cate)
+  .then(res => {
+    setCate(res.data.genres)
+})
+  .catch(err => console.log(err))
+}, [API_Cate])
+
+console.log(cate)
+
 const getID = (id)=>{
     navigate(`/DetailPage/${id}`)
+}
+
+const getGendres = (gendres)=>{
+    navigate(`/Categories/${gendres}`)
 }
 
 console.log(data)
@@ -86,9 +102,9 @@ console.log(data)
         slidesPerGroup={1}
         loop={true}
         loopFillGroupWithBlank={true}
-        pagination={{
-          clickable: true,
-        }}
+        // pagination={{
+        //   clickable: true,
+        // }}
         navigation={true}
         modules={[Autoplay, Pagination, Navigation]}
         autoplay={{
@@ -126,7 +142,7 @@ console.log(data)
     <div className='popular_wrap'>
     <div className='popular_text'>
         <h1>
-        Browse by Category
+        Browse by Genres
         </h1>
         <Link to='/AllMovie' className='All_Movie'>
             <h2>
@@ -136,30 +152,32 @@ console.log(data)
         </Link>
     </div>
 
+
+
+
+    
     <div className="CateBtn_Wrap">
+        
         <div className="cate_btn">
-            <button>Crime</button>
-            <button>Trailer</button>
-            <button>Drama</button>
-            <button>Animation</button>
-            <button>Family</button>
-            <button>Action</button>
-            <button>Fantasy</button>
-            <button>Romance</button>
-            <button>Science Fiction</button>
+            {
+                cate && cate.map(e=> <button key={e.id} onClick={()=>getGendres(e.name.toLowerCase())}>{e.name}</button>)
+            }
+
         </div>
     </div>
 
     </div>
+
+
     <Swiper
         slidesPerView={5}
         spaceBetween={30}
         slidesPerGroup={1}
         loop={true}
         loopFillGroupWithBlank={true}
-        pagination={{
-          clickable: true,
-        }}
+        // pagination={{
+        //   clickable: true,
+        // }}
         navigation={true}
         modules={[Autoplay, Pagination, Navigation]}
         autoplay={{

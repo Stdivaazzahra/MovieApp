@@ -4,6 +4,7 @@ import Detail from "./Pages/Detail/Detail";
 import HomePage from "./Pages/HomePage/HomePage";
 import Navbar from "./Pages/Navbar/Navbar";
 import Search from "./Pages/Seacrh/Search";
+import Categories from "./Pages/Categories/Categories";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/AllMovie" element={<AllMovie />} />
           <Route path="/DetailPage/:id" element={<Detail />} />
           <Route path="/Search/:name" element={<Search />} />
+          <Route path="/Categories/:genres" element={<Categories />} />
         </Routes>
       </BrowserRouter>
     </div>

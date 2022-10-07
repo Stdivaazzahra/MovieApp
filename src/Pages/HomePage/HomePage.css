@@ -186,7 +186,12 @@ div.CateBtn_Wrap {
   justify-content: space-between;
   padding: 0 2rem 2rem 3rem;
 }
-
+.cate_btn {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
 .cate_btn button {
   /* color: rgb(182, 24, 24); */
   width: 8.3rem;
@@ -195,7 +200,6 @@ div.CateBtn_Wrap {
   border: solid rgb(182, 24, 24);
   padding: 0.5rem 1rem;
   border-radius: 20px;
-  margin-right: 1rem;
   transition: all 0.2s linear;
   cursor: pointer;
   text-shadow: 1px 2px 10px rgb(182, 173, 173);
