@@ -4,29 +4,27 @@ import { useParams, useNavigate } from 'react-router-dom';
 import './Categories.css';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, Navigation } from 'swiper';
-import spiner from '../../assets/spin-loader.gif';
+import CardList from './cardList/CardList';
 const Categories = () => {
-  const Navigate = useNavigate();
+  const navigate = useNavigate();
   const { genres } = useParams();
 
   const API_Cate = 'https://api.themoviedb.org/3/genre/movie/list?api_key=9cc1bc46ae7070abb9a43667213d613a&language=en-US';
-  const API_IMG = 'https://image.tmdb.org/t/p/w500/';
-  const [imageLoaded, setImageLoaded] = useState(false);
+  const API_SEARCH = 'https://api.themoviedb.org/3/search/movie?api_key=9cc1bc46ae7070abb9a43667213d613a&query=' + genres;
   const [cate, setCate] = useState();
   const [data, setData] = useState();
-  const [genre, setGenre] = useState(genres);
   useEffect(() => {
     axios
-      .get('https://api.themoviedb.org/3/search/movie?api_key=9cc1bc46ae7070abb9a43667213d613a&query=' + genre)
-      .then((res) => setData(res.data.results))
+      .get(API_SEARCH)
+      .then((res) => setData((prev) => res.data.results))
       .catch((err) => console.log(err));
-  }, [genre]);
+  }, [API_SEARCH]);
 
   useEffect(() => {
     axios
       .get(API_Cate)
       .then((res) => {
-        setCate(res.data.genres);
+        setCate((prev) => res.data.genres);
       })
       .catch((err) => console.log(err));
   }, [API_Cate]);
@@ -34,25 +32,15 @@ const Categories = () => {
   console.log(genres);
 
   const getID = (id) => {
-    Navigate(`/DetailPage/${id}`);
-  };
-
-  const handleImageLoaded = () => {
-    setImageLoaded(true);
+    navigate(`/DetailPage/${id}`);
   };
 
   const getGendres = (gendres) => {
-    setGenre(gendres);
-    const API_Search = 'https://api.themoviedb.org/3/search/movie?api_key=9cc1bc46ae7070abb9a43667213d613a&query=' + gendres;
-    axios
-      .get(API_Search)
-      .then((res) => {
-        setData(res.data.results);
-      })
-      .catch((err) => console.log(err));
+    navigate(`/categories/${gendres}`);
   };
 
-  console.log(imageLoaded);
+  console.log();
+
   return (
     <div className="category_page">
       <div className="CateBtn_Wrap">
@@ -66,7 +54,7 @@ const Categories = () => {
         </div>
       </div>
       <div className="Search_wrap">
-        <h1>Showing Movies With "{genre.replace(genre.charAt(0), genre.charAt(0).toUpperCase())}" Genre</h1>
+        <h1>Showing Movies With "{genres.replace(genres.charAt(0), genres.charAt(0).toUpperCase())}" Genre</h1>
       </div>
 
       <Swiper
@@ -90,14 +78,7 @@ const Categories = () => {
           {data?.map((item) => {
             return (
               <SwiperSlide>
-                <div onClick={() => getID(item.id)} key={item.id} className="Popular_menu">
-                  {!imageLoaded && <img className="spin-loader" src={spiner} alt="spin loader" />}
-                  <img className={imageLoaded ? 'poster' : 'ended'} onLoad={handleImageLoaded} src={API_IMG + `${item.poster_path}`} alt="Movie Category" />
-                  <div className="dec">
-                    <h3>{item.title}</h3>
-                    <h4>{item.release_date}</h4>
-                  </div>
-                </div>
+                <CardList getID={getID} item={item} />
               </SwiperSlide>
             );
           })}

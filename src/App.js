@@ -16,7 +16,7 @@ function App() {
           <Route path="/AllMovie" element={<AllMovie />} />
           <Route path="/DetailPage/:id" element={<Detail />} replace />
           <Route path="/Search/:name" element={<Search />} replace />
-          <Route path="/Categories/:genres" element={<Categories />} replace />
+          <Route path="/categories/:genres" element={<Categories />} replace />
         </Routes>
       </BrowserRouter>
     </div>
