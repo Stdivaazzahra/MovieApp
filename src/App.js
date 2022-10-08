@@ -1,10 +1,10 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import AllMovie from "./Pages/All_Movie/AllMovie";
-import Detail from "./Pages/Detail/Detail";
-import HomePage from "./Pages/HomePage/HomePage";
-import Navbar from "./Pages/Navbar/Navbar";
-import Search from "./Pages/Seacrh/Search";
-import Categories from "./Pages/Categories/Categories";
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import AllMovie from './Pages/All_Movie/AllMovie';
+import Detail from './Pages/Detail/Detail';
+import HomePage from './Pages/HomePage/HomePage';
+import Navbar from './Pages/Navbar/Navbar';
+import Search from './Pages/Seacrh/Search';
+import Categories from './Pages/Categories/Categories';
 
 function App() {
   return (
@@ -14,9 +14,9 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/AllMovie" element={<AllMovie />} />
-          <Route path="/DetailPage/:id" element={<Detail />} />
-          <Route path="/Search/:name" element={<Search />} />
-          <Route path="/Categories/:genres" element={<Categories />} />
+          <Route path="/DetailPage/:id" element={<Detail />} replace />
+          <Route path="/Search/:name" element={<Search />} replace />
+          <Route path="/Categories/:genres" element={<Categories />} replace />
         </Routes>
       </BrowserRouter>
     </div>

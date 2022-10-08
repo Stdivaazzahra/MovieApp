@@ -1,0 +1,24 @@
+.spin-loader {
+  width: 100%;
+  margin: auto;
+  animation: fade 1s ease forwards;
+}
+.poster {
+  animation: fadeIn 1s ease forwards;
+}
+.ended {
+  display: none;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.category_page {
+  padding-top: 6em;
+}
