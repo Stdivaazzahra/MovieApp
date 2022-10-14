@@ -37,7 +37,7 @@ const Navbar = () => {
           {token ? (
             <>
               <span className="name">{localStorage.getItem('first_name')}</span>
-              <img className="avatar" src="https://thumbs.dreamstime.com/b/businessman-icon-vector-male-avatar-profile-image-profile-businessman-icon-vector-male-avatar-profile-image-182095609.jpg" alt="avatar user" />
+              <img className="avatar" src="https://fanbookcdn.fanbook.me/profile/2018/11/30/fde1d526a4a242a9943b48e76d4309b6_1543549001144.png" alt="avatar user" />
               <span
                 onClick={() => {
                   localStorage.clear();
