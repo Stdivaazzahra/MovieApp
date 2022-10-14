@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, Navigate } from 'react-router-dom';
 import './Categories.css';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, Navigation } from 'swiper';
@@ -28,8 +28,9 @@ const Categories = () => {
       })
       .catch((err) => console.log(err));
   }, [API_Cate]);
-  console.log(data);
-  console.log(genres);
+  //CEK TOKEN
+  const token = localStorage.getItem('token');
+  if (!token) return <Navigate to="/" replace />;
 
   const getID = (id) => {
     navigate(`/DetailPage/${id}`);
@@ -38,8 +39,6 @@ const Categories = () => {
   const getGendres = (gendres) => {
     navigate(`/categories/${gendres}`);
   };
-
-  console.log();
 
   return (
     <div className="category_page">

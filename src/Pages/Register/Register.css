@@ -1,9 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Cabin:wght@400;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@400;600;700&display=swap');
 
 .wrap_form_Res {
   width: 35%;
   height: 70vh;
-  font-family: "Cabin", sans-serif;
+  font-family: 'Cabin', sans-serif;
   background-color: rgb(233, 232, 232);
   display: flex;
   flex-direction: column;
@@ -43,7 +43,7 @@ div.item_form_Res {
   height: 7rem;
 }
 
-input[type="file"] {
+input[type='file'] {
   position: absolute;
   top: 10%;
   left: 50%;
@@ -80,4 +80,19 @@ input[type="file"] {
   to {
     opacity: 1;
   }
+}
+.error {
+  background: linear-gradient(45deg, #ccc, red);
+  padding: 1rem;
+  font-weight: bolder;
+  color: white;
+  position: absolute;
+  top: 30px;
+  right: -130%;
+  transition: right 0.5s ease;
+  border-radius: 30px;
+}
+
+.error.muncul {
+  right: -90%;
 }
