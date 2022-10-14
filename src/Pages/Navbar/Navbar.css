@@ -80,6 +80,13 @@
 
 input.cari:focus {
   outline: none;
+
+=======
+  border: none;
+  /* color: white; */
+}
+
+
 }
 
 .search_btn button {

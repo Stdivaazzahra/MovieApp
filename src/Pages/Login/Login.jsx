@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
 import './Login.css';
 import { AiOutlineMail } from 'react-icons/ai';
-import { FiEye } from 'react-icons/fi';
+// import { FiEye } from 'react-icons/fi';
+import { FiEyeOff } from 'react-icons/fi';
 import { CgCloseO } from 'react-icons/cg';
 // import { FiEyeOff } from 'react-icons/fi';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
 const Login = ({ open, onClose }) => {
+
   const API_LOGIN = `https://notflixtv.herokuapp.com/api/v1/users/login`;
   const [data, setData] = useState({
     email: '',

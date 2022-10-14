@@ -5,6 +5,7 @@ import { AiOutlineMail } from 'react-icons/ai';
 import { FaRegUser } from 'react-icons/fa';
 import { BiUserCircle } from 'react-icons/bi';
 import { BsFillCameraFill } from 'react-icons/bs';
+
 import { FiEye } from 'react-icons/fi';
 // import { FiEyeOff } from 'react-icons/fi';
 import axios from 'axios';
@@ -91,6 +92,7 @@ const Register = ({ openRes, onCloseRes }) => {
             <AiOutlineMail className="icon_form" />
           </div>
 
+
           <div className="pass_box">
             <input onChange={handleDataInput} type="password" placeholder="Password" name="password" required />
             <FiEye className="icon_form" />
@@ -105,6 +107,37 @@ const Register = ({ openRes, onCloseRes }) => {
                     <FiEyeOff/>
                 </span> */}
           </div>
+
+                <div className="input_box">
+                    <input onChange={handleDataInput} name="first_name" type="text" placeholder='First Name' pattern="^[a-zA-Z\s'-]{1,100}$" required/>
+                    <FaRegUser className='icon_form'/>
+                </div>
+                <div className="input_box">
+                <input onChange={handleDataInput}  type="text" placeholder='Last Name' name="last_name" pattern="^[a-zA-Z\s'-]{1,100}$" required/>
+                <FaRegUser className='icon_form'/>
+                </div>
+                <div className="input_box">
+                <input onChange={handleDataInput} type="email" placeholder='Email Address' name="email" pattern='^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+[.]+[a-zA-Z]{2,}$' required/>
+                <AiOutlineMail className='icon_form'/>
+                </div>
+                
+                <div className="pass_box">
+                <input onChange={handleDataInput}  type="password" placeholder='Password' name="password" required />
+                <FiEyeOff className='icon_form'/>
+                {/* <FiEye className='icon_form'/> */}
+                
+                </div>
+                <div className="pass_box">
+                <input onChange={handleDataInput}  type="password" placeholder='Password Confirmation' name="password_confirmation" required />
+                <FiEyeOff className='icon_form'/>
+                {/* <FiEye className='icon_form'/> */}
+                </div>
+
+                <button type="submit" onClick={dataSend} className='button'>Register Now</button>
+            </form>
+        </div>
+        
+
 
           <button type="submit" onClick={dataSend} className="button">
             Register Now
