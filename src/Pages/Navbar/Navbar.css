@@ -1,5 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Cabin:wght@400;600;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Audiowide&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
 
 .navbar_wrap {
   margin: 0;
@@ -14,7 +14,7 @@
 }
 
 .navbar {
-  font-family: "Cabin", sans-serif;
+  font-family: 'Cabin', sans-serif;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -26,7 +26,7 @@
 
 .Navbar_Title {
   text-decoration: none;
-  font-family: "Audiowide", cursive;
+  font-family: 'Audiowide', cursive;
   color: rgb(182, 24, 24);
   transition: all 0.2s linear;
   text-shadow: 4px 2px 5px rgb(0, 0, 0);
@@ -68,13 +68,13 @@
   /* padding: 0 30px; */
 }
 
-.search_btn input {
+.search_btn input.cari {
   background-color: transparent;
   border: none;
   border-radius: 0.4rem;
   width: 22rem;
   font-size: 0.9rem;
-  font-family: "Cabin", sans-serif;
+  font-family: 'Cabin', sans-serif;
   /* color: white; */
 }
 
@@ -148,4 +148,20 @@ button.register {
   background-color: rgba(182, 24, 24, 0.284);
   color: white;
   box-shadow: 3px 3px 10px rgba(255, 3, 3, 0.589);
+}
+.avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  object-fit: cover;
+  margin: 0 1rem;
+}
+
+.name {
+  font-weight: bolder;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
 }

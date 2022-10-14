@@ -34,7 +34,6 @@ const HomePage = () => {
       .get(API_POPULAR)
       .then((res) => {
         setData(res.data.results.slice(0, 15));
-        console.log(res.data);
       })
       .catch((err) => console.log(err));
   }, [API_POPULAR]);
@@ -47,8 +46,6 @@ const HomePage = () => {
       })
       .catch((err) => console.log(err));
   }, [API_Cate]);
-
-  console.log(cate);
 
   const getID = (id) => {
     navigate(`/DetailPage/${id}`);

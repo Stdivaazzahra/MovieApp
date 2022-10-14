@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Navigate, useParams } from 'react-router-dom';
 import './Detail.css';
 import { BiStar } from 'react-icons/bi';
 import { AiOutlinePlayCircle } from 'react-icons/ai';
@@ -61,7 +61,9 @@ const Detail = () => {
       .then((ress) => setCast(ress.data.cast.slice(0, 10)))
       .catch((err) => console.log(err));
   }, [API_Cast]);
-
+  //CEK TOKEN
+  const token = localStorage.getItem('token');
+  if (!token) return <Navigate to="/" replace />;
   const openVideo = () => {
     setOpenVideo((prev) => !prev);
   };
@@ -99,7 +101,7 @@ const Detail = () => {
         <div className={`video ${open ? 'open' : ''}`}>
           {video && (
             <div className="wrapper_video">
-              <iframe className="video__" src={`https://www.themoviedb.org/video/play?key=${video[0]?.key}`} frameBorder="0" title="link video"></iframe>
+              <video className="video__" Autoplay="false" src={`https://www.themoviedb.org/video/play?key=${video[0]?.key}`} frameBorder="0" title="link video"></video>
             </div>
           )}
           <span onClick={openVideo}>
