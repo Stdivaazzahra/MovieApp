@@ -8,7 +8,7 @@ import { CgCloseO } from 'react-icons/cg';
 import axios from 'axios'
 
 const Login = ({ open, onClose }) => {
-    const API_ENDPOINT=`http://notflixtv.herokuapp.com/api/v1//users/login`
+    const API_ENDPOINT=`https://notflixtv.herokuapp.com/api/v1//users/login`
     const [data, setData] = useState({
         email: "",
         password: "",
@@ -23,7 +23,7 @@ const Login = ({ open, onClose }) => {
     }
 
     const [ShowPass, setShowPass] = useState(false);
-    
+
 
     const dataSend = (e) =>{
         e.preventDefault()

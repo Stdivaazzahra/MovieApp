@@ -10,7 +10,7 @@ import { FiEyeOff } from 'react-icons/fi';
 import axios from 'axios'
 
 const Register = ({ openRes, onCloseRes }) => {
-    const API_ENDPOINT=`http://notflixtv.herokuapp.com/api/v1/users`
+    const API_ENDPOINT=`https://notflixtv.herokuapp.com/api/v1/users`
     const [preview, setDatapreview]=useState(null)
     const [image, setDataImage]=useState(null)
     const [data, setData] = useState({
