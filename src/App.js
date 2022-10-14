@@ -1,10 +1,11 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import AllMovie from './Pages/All_Movie/AllMovie';
-import Detail from './Pages/Detail/Detail';
-import HomePage from './Pages/HomePage/HomePage';
-import Navbar from './Pages/Navbar/Navbar';
-import Search from './Pages/Seacrh/Search';
-import Categories from './Pages/Categories/Categories';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import AllMovie from "./Pages/All_Movie/AllMovie";
+import Detail from "./Pages/Detail/Detail";
+import HomePage from "./Pages/HomePage/HomePage";
+import Navbar from "./Pages/Navbar/Navbar";
+import Search from "./Pages/Seacrh/Search";
+import Categories from "./Pages/Categories/Categories";
+import Footer from "./Pages/Footer/Footer";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/categories/:genres" element={<Categories />} replace />
         </Routes>
       </BrowserRouter>
+      <Footer />
     </div>
   );
 }
