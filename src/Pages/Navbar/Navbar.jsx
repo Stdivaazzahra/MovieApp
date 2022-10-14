@@ -2,9 +2,13 @@ import React, { useState } from 'react'
 import { BiSearchAlt } from 'react-icons/bi';
 import './Navbar.css'
 import { Link, useNavigate } from 'react-router-dom';
+import Login from '../Login/Login'
+import Register from '../Register/Register'
 
 const Navbar = () => {
   const [dataSearch, setDataSearch] =useState()
+  const [isOpen, setIsOpen] = useState(false)
+  const [isOpenRes, setIsOpenRes] = useState(false)
   
     const navigate =  useNavigate()
     const searchBtn = (name) =>{
@@ -28,14 +32,18 @@ const Navbar = () => {
             </div>
           </div>
           <div className="navbar_bottom">  
-            <div className='login'>
+            <button onClick={() => setIsOpen(true)} className='login'>
               Login
-            </div>
-            <div className='register'>
+            </button>
+            <button onClick={() => setIsOpenRes(true)} className='register'>
               Register
-          </div>
+            </button>
           </div>
       </div>
+
+      <Login open={isOpen} onClose={setIsOpen}/>
+      <Register openRes={isOpenRes} onCloseRes={ setIsOpenRes}/>
+      
     </div>
   )
 }

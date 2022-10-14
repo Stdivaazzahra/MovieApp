@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@400;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Cabin:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Audiowide&display=swap");
 
 .navbar_wrap {
   margin: 0;
@@ -14,18 +14,19 @@
 }
 
 .navbar {
-  font-family: 'Cabin', sans-serif;
+  font-family: "Cabin", sans-serif;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   /* padding: 5px 20px; */
   padding: 0.3rem 3rem;
   background-color: rgba(255, 255, 255, 0.254);
+  align-items: center;
 }
 
 .Navbar_Title {
   text-decoration: none;
-  font-family: 'Audiowide', cursive;
+  font-family: "Audiowide", cursive;
   color: rgb(182, 24, 24);
   transition: all 0.2s linear;
   text-shadow: 4px 2px 5px rgb(0, 0, 0);
@@ -73,13 +74,18 @@
   border-radius: 0.4rem;
   width: 22rem;
   font-size: 0.9rem;
-  font-family: 'Cabin', sans-serif;
+  font-family: "Cabin", sans-serif;
   /* color: white; */
 }
 
-input[type='text']:focus {
+input:focus {
   outline: none;
   /* color: white; */
+}
+
+input.cari {
+  /* padding: 0; */
+  margin: 0;
 }
 
 .search_btn button {
@@ -87,7 +93,7 @@ input[type='text']:focus {
   padding-top: 0.3rem;
   background-color: transparent;
   border: none;
-  border-radius: 0.4rem;
+  border-radius: 0.5rem;
   cursor: pointer;
   /* text-decoration: none; */
   /* color: white; */
@@ -100,16 +106,23 @@ input[type='text']:focus {
 .navbar_bottom {
   display: flex;
   flex-direction: row;
+  /* justify-items: center; */
   cursor: pointer;
 }
 
-.login {
+button.login {
+  height: 40px;
   color: rgb(182, 24, 24);
   border: solid rgb(182, 24, 24);
-  padding: 7px 30px;
+  background-color: transparent;
+  padding: 0 30px;
+  font-weight: bolder;
   border-radius: 20px;
   margin-right: 20px;
   transition: all 0.2s linear;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
 }
 .login:hover {
   background-color: rgb(182, 24, 24);
@@ -117,13 +130,18 @@ input[type='text']:focus {
   box-shadow: 5px 5px 10px rgba(255, 3, 3, 0.589);
 }
 
-.register {
+button.register {
+  height: 40px;
   background-color: rgb(182, 24, 24);
   color: white;
   border: solid rgb(182, 24, 24);
-  padding: 7px 30px;
+  font-weight: bolder;
+  cursor: pointer;
+  padding: 0 30px;
   border-radius: 20px;
   transition: all 0.2s linear;
+  display: flex;
+  align-items: center;
 }
 .register:hover {
   background-color: rgba(182, 24, 24, 0.284);
