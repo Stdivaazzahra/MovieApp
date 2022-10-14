@@ -2,6 +2,7 @@ import axios from 'axios'
 import './Search.css'
 import React, { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
+import '../HomePage/HomePage.css'
 
 const Search = () => {
     const {name} = useParams()
@@ -23,7 +24,7 @@ const Search = () => {
         {
             data ? data.map(item=>{
                 return (
-                    <Link key={item.id} className="Popular_menu" to={`/DetailPage/${item.id}`}>
+                    <Link key={item.id} className="Popular_menu_search" to={`/DetailPage/${item.id}`}>
                         <div>
                         <div className="img_path">
                             <img src={API_IMG+`${item.poster_path}`} alt="Movie Popular"/>

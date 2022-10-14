@@ -1,7 +1,8 @@
 import React, {useState} from 'react'
 import './Login.css';
 import { AiOutlineMail } from 'react-icons/ai';
-import { FiEye } from 'react-icons/fi';
+// import { FiEye } from 'react-icons/fi';
+import { FiEyeOff } from 'react-icons/fi';
 import { CgCloseO } from 'react-icons/cg';
 // import { FiEyeOff } from 'react-icons/fi';
 import axios from 'axios'
@@ -20,6 +21,9 @@ const Login = ({ open, onClose }) => {
             [e.target.name]: e.target.value,
         })
     }
+
+    const [ShowPass, setShowPass] = useState(false);
+    
 
     const dataSend = (e) =>{
         e.preventDefault()
@@ -44,7 +48,8 @@ const Login = ({ open, onClose }) => {
                 
                 <div className="pass_box">
                 <input type="password" placeholder='Password' onChange={handleDataInput} name="password"  required />
-                <FiEye className='icon_form'/>
+                <FiEyeOff className='icon_form'/>
+                {/* <FiEye className='icon_form'/> */}
                 
                 </div>
                 <button type="submit" onClick={dataSend} className='button'>Login</button>

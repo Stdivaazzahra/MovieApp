@@ -80,6 +80,7 @@
 
 input:focus {
   outline: none;
+  border: none;
   /* color: white; */
 }
 

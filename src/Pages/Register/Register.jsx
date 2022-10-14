@@ -5,8 +5,8 @@ import { AiOutlineMail } from 'react-icons/ai';
 import { FaRegUser } from 'react-icons/fa';
 import { BiUserCircle } from 'react-icons/bi';
 import { BsFillCameraFill } from 'react-icons/bs';
-import { FiEye } from 'react-icons/fi';
-// import { FiEyeOff } from 'react-icons/fi';
+// import { FiEye } from 'react-icons/fi';
+import { FiEyeOff } from 'react-icons/fi';
 import axios from 'axios'
 
 const Register = ({ openRes, onCloseRes }) => {
@@ -84,17 +84,14 @@ const Register = ({ openRes, onCloseRes }) => {
                 
                 <div className="pass_box">
                 <input onChange={handleDataInput}  type="password" placeholder='Password' name="password" required />
-                <FiEye className='icon_form'/>
-                {/* <span>
-                    <FiEyeOff/>
-                </span> */}
+                <FiEyeOff className='icon_form'/>
+                {/* <FiEye className='icon_form'/> */}
+                
                 </div>
                 <div className="pass_box">
                 <input onChange={handleDataInput}  type="password" placeholder='Password Confirmation' name="password_confirmation" required />
-                <FiEye className='icon_form'/>
-                {/* <span>
-                    <FiEyeOff/>
-                </span> */}
+                <FiEyeOff className='icon_form'/>
+                {/* <FiEye className='icon_form'/> */}
                 </div>
 
                 <button type="submit" onClick={dataSend} className='button'>Register Now</button>
