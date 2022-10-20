@@ -4,7 +4,7 @@ import { useParams, useNavigate, Navigate } from 'react-router-dom';
 import './Categories.css';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, Navigation } from 'swiper';
-import CardList from './cardList/CardList';
+import CardList from './CardList/CardList';
 const Categories = () => {
   const navigate = useNavigate();
   const { genres } = useParams();
@@ -62,9 +62,9 @@ const Categories = () => {
         slidesPerGroup={1}
         loop={true}
         loopFillGroupWithBlank={true}
-        pagination={{
-          clickable: true,
-        }}
+        // pagination={{
+        //   clickable: true,
+        // }}
         navigation={true}
         modules={[Autoplay, Pagination, Navigation]}
         autoplay={{

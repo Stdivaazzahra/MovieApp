@@ -21,6 +21,7 @@ const Register = ({ openRes, onCloseRes }) => {
     password: '',
     password_confirmation: '',
   });
+
   if (!openRes) return null;
   const handleDataInput = (e) => {
     setData({
@@ -28,6 +29,7 @@ const Register = ({ openRes, onCloseRes }) => {
       [e.target.name]: e.target.value,
     });
   };
+
   console.log(image);
   const dataSend = (e) => {
     e.preventDefault();
@@ -44,6 +46,7 @@ const Register = ({ openRes, onCloseRes }) => {
       .then((res) => console.log(res))
       .catch((err) => setMsg(err.response.data.message));
   };
+
   if (msg) {
     setTimeout(() => {
       setMsg('');
