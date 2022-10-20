@@ -4,14 +4,18 @@ import './Navbar.css';
 import { Link, useNavigate } from 'react-router-dom';
 import Login from '../Login/Login';
 import Register from '../Register/Register';
+import { GoogleOAuthProvider } from '@react-oauth/google';
 
 const Navbar = () => {
   const [dataSearch, setDataSearch] = useState();
   const [isOpen, setIsOpen] = useState(false);
   const [isOpenRes, setIsOpenRes] = useState(false);
+  const [setIsOpenGlg] = useState(false);
   const token = localStorage.getItem('token');
-
+  const credential = localStorage.getItem('credential');
+  
   const navigate = useNavigate();
+  
   const searchBtn = (name) => {
     if (name) {
       navigate(`/Search/${name}`);
@@ -33,7 +37,7 @@ const Navbar = () => {
             </button>
           </div>
         </div>
-        <div className="navbar_bottom">
+        {/* <div className="navbar_bottom">
           {token ? (
             <>
               <span className="name">{localStorage.getItem('first_name')}</span>
@@ -53,6 +57,48 @@ const Navbar = () => {
               <button onClick={() => setIsOpen(true)} className="login">
                 Login
               </button>
+              <button onClick={() => setIsOpenRes(true)} className="register">
+                Register
+              </button>
+            </>
+          )}
+        </div> */}
+        <div className="navbar_bottom">
+          {token ? (
+            <>
+              <span className="name">{localStorage.getItem('first_name')}</span>
+              <img className="avatar" src="https://fanbookcdn.fanbook.me/profile/2018/11/30/fde1d526a4a242a9943b48e76d4309b6_1543549001144.png" alt="avatar user" />
+              <span
+                onClick={() => {
+                  localStorage.clear();
+                  navigate('/');
+                }}
+                className="name"
+              >
+                LOGOUT
+              </span>
+            </>
+          ) : credential ? (
+            <>
+              <span className="name"> {localStorage.getItem('given_name')} </span>
+              <img className="avatar" src="https://i.pinimg.com/originals/87/25/26/87252688f7652c9e5c777e0c735cf4fb.jpg" alt="avatar user" />
+              {/* <img className="avatar" src="{localStorage.getItem('picture')}" alt="avatar user" /> */}
+              <span
+                onClick={() => {
+                  localStorage.clear();
+                  navigate('/');
+                }}
+                className="name"
+              >
+                LOGOUT
+              </span>
+            </>
+          ) : (
+            <>
+              <button onClick={() => setIsOpen(true)} className="login">
+                Login
+              </button>
+              <GoogleOAuthProvider onClick={() => setIsOpenGlg(true)} />
               <button onClick={() => setIsOpenRes(true)} className="register">
                 Register
               </button>
