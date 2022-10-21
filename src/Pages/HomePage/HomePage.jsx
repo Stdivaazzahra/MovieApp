@@ -114,9 +114,6 @@ const HomePage = () => {
         slidesPerGroup={1}
         loop={true}
         loopFillGroupWithBlank={true}
-        // pagination={{
-        //   clickable: true,
-        // }}
         navigation={true}
         modules={[Autoplay, Pagination, Navigation]}
         autoplay={{
