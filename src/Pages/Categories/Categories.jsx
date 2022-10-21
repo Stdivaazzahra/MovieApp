@@ -4,7 +4,7 @@ import { useParams, useNavigate, Navigate } from 'react-router-dom';
 import './Categories.css';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, Navigation } from 'swiper';
-import CardList from './CardList/CardList';
+import CardList from './cardList/CardList';
 import { ContextAccses } from '../../App';
 const Categories = () => {
   const navigate = useNavigate();
