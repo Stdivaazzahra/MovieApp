@@ -3,8 +3,10 @@ import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate, Navigate } from 'react-router-dom';
 import './Categories.css';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Pagination, Navigation } from 'swiper';
-import CardList from './CardList/CardList';
+import { Autoplay, Pagination, Navigation } from 'swiper';  
+import CardList from './cardList/CardList';
+import { ContextAccses } from '../../App';
+
 const Categories = () => {
   const navigate = useNavigate();
   const { genres } = useParams();
@@ -35,7 +37,7 @@ const Categories = () => {
   const getID = (id) => {
     navigate(`/DetailPage/${id}`);
   };
-
+  //fungsi getGendres
   const getGendres = (gendres) => {
     navigate(`/categories/${gendres}`);
   };
@@ -62,9 +64,6 @@ const Categories = () => {
         slidesPerGroup={1}
         loop={true}
         loopFillGroupWithBlank={true}
-        // pagination={{
-        //   clickable: true,
-        // }}
         navigation={true}
         modules={[Autoplay, Pagination, Navigation]}
         autoplay={{

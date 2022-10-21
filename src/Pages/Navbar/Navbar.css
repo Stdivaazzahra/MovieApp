@@ -5,12 +5,9 @@
   margin: 0;
   padding: 0;
   width: 100%;
-  /* z-index: 1; */
   position: fixed;
   overflow: hidden;
-  z-index: 999;
-  /* height: 50px; */
-  /* height: 70px; */
+  z-index: 10;
 }
 
 .navbar {
@@ -18,7 +15,6 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  /* padding: 5px 20px; */
   padding: 0.3rem 3rem;
   background-color: rgba(255, 255, 255, 0.254);
   align-items: center;
@@ -38,17 +34,9 @@
   text-shadow: 2px 3px 7px rgba(255, 3, 3, 0.589);
 }
 
-/* .Navbar_search button {
-  border: solid rgb(182, 24, 24);
-  border-radius: 15px;
-  padding: 7px 50px;
-  font-family: "Cabin", sans-serif;
-} */
-
 .Navbar_search {
   width: 30%;
   border: 3px solid;
-  /* padding: 10px; */
   background-color: rgba(255, 255, 255, 0);
   border-color: rgb(182, 24, 24);
   border-radius: 20px;
@@ -67,8 +55,6 @@ form.search_btn {
   display: flex;
   flex-direction: row;
   padding: 0.3rem 1rem;
-  /* flex-wrap: wrap; */
-  /* padding: 0 30px; */
 }
 
 .search_btn input.cari {
@@ -78,17 +64,14 @@ form.search_btn {
   width: 22rem;
   font-size: 0.9rem;
   font-family: 'Cabin', sans-serif;
-  /* color: white; */
 }
 
 input:focus {
   outline: none;
   border: none;
-  /* color: white; */
 }
 
 input.cari {
-  /* padding: 0; */
   margin: 0;
 }
 
@@ -99,8 +82,6 @@ input.cari {
   border: none;
   border-radius: 0.5rem;
   cursor: pointer;
-  /* text-decoration: none; */
-  /* color: white; */
 }
 
 .navbar_icon {
@@ -111,7 +92,6 @@ input.cari {
 .navbar_bottom {
   display: flex;
   flex-direction: row;
-  /* justify-items: center; */
   cursor: pointer;
 }
 

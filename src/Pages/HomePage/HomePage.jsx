@@ -20,6 +20,8 @@ import Alert from '../../components/Alert';
 import { useContext } from 'react';
 import { ContextAccses } from '../../App';
 import { AnimatePresence, motion } from 'framer-motion';
+import Login from '../Login/Login';
+import Register from '../Register/Register';
 
 const HomePage = () => {
   const API_IMG = 'https://image.tmdb.org/t/p/w500/';
@@ -114,9 +116,6 @@ const HomePage = () => {
         slidesPerGroup={1}
         loop={true}
         loopFillGroupWithBlank={true}
-        // pagination={{
-        //   clickable: true,
-        // }}
         navigation={true}
         modules={[Autoplay, Pagination, Navigation]}
         autoplay={{
