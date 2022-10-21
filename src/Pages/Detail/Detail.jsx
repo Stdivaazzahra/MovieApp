@@ -122,7 +122,7 @@ const Detail = () => {
 
           <div className="cast">
             <div className="Cast_Text">
-              <h1> Cast and Crew Info</h1>
+              <h1 className="text-[2rem]"> Cast and Crew Info</h1>
             </div>
 
             <Swiper
