@@ -44,7 +44,7 @@ const Register = ({ openRes, onCloseRes }) => {
     axios
       .post(API_ENDPOINT, user)
       .then((res) => console.log(res))
-      .catch((err) => setMsg(err.response.data.message));
+      .catch((err) => console.log(err));
   };
 
   if (msg) {
@@ -60,7 +60,7 @@ const Register = ({ openRes, onCloseRes }) => {
         <CgCloseO onClick={() => onCloseRes(false)} className="icon_close" />
       </div>
       <hr />
-      <div>
+      <div className="wrapper_form">
         <form>
           <div className="input_img">
             {preview ? <img src={preview} alt="prevew " className="preview_Img" /> : <BiUserCircle className="iconUser" />}
@@ -78,23 +78,23 @@ const Register = ({ openRes, onCloseRes }) => {
           </div>
 
           <div className="input_box">
-            <input onChange={handleDataInput} name="first_name" type="text" placeholder="First Name" pattern="^[a-zA-Z\s'-]{1,100}$" required />
+            <input onChange={handleDataInput} name="first_name" type="text" placeholder="First Name" required />
             <FaRegUser className="icon_form" />
           </div>
           <div className="input_box">
-            <input onChange={handleDataInput} type="text" placeholder="Last Name" name="last_name" pattern="^[a-zA-Z\s'-]{1,100}$" required />
+            <input onChange={handleDataInput} type="text" placeholder="Last Name" name="last_name" required />
             <FaRegUser className="icon_form" />
           </div>
           <div className="input_box">
-            <input onChange={handleDataInput} type="email" placeholder="Email Address" name="email" pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+[.]+[a-zA-Z]{2,}$" required />
+            <input onChange={handleDataInput} type="email" placeholder="Email Address" name="email" required />
             <AiOutlineMail className="icon_form" />
           </div>
 
-          <div className="pass_box">
+          <div className="input_box">
             <input onChange={handleDataInput} type="password" placeholder="Password" name="password" required />
             <FiEyeOff className="icon_form" />
           </div>
-          <div className="pass_box">
+          <div className="input_box">
             <input onChange={handleDataInput} type="password" placeholder="Password Confirmation" name="password_confirmation" required />
             <FiEyeOff className="icon_form" />
           </div>

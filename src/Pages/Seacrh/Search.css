@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Cabin:wght@400;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@400;600;700&display=swap');
 
 .Search_wrap {
   width: 100%;
@@ -6,8 +6,8 @@
 }
 
 .Search_wrap h1 {
-  font-family: "Cabin", sans-serif;
-  padding: 0 2rem 3rem 3rem;
+  font-family: 'Cabin', sans-serif;
+  padding: 0 2rem 2rem 3rem;
   text-shadow: 1px 2px 10px rgb(192, 162, 162);
 }
 
@@ -17,6 +17,5 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 1rem;
-  padding: 2rem;
   margin: 0;
 }

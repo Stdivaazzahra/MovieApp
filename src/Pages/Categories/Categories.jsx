@@ -1,13 +1,15 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useParams, useNavigate, Navigate } from 'react-router-dom';
 import './Categories.css';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, Navigation } from 'swiper';
 import CardList from './cardList/CardList';
+
 const Categories = () => {
   const navigate = useNavigate();
   const { genres } = useParams();
+  const { dispatch } = useContext(ContextAccses);
 
   const API_Cate = 'https://api.themoviedb.org/3/genre/movie/list?api_key=9cc1bc46ae7070abb9a43667213d613a&language=en-US';
   const API_SEARCH = 'https://api.themoviedb.org/3/search/movie?api_key=9cc1bc46ae7070abb9a43667213d613a&query=' + genres;
@@ -29,8 +31,11 @@ const Categories = () => {
       .catch((err) => console.log(err));
   }, [API_Cate]);
   //CEK TOKEN
-  const token = localStorage.getItem('token');
-  if (!token) return <Navigate to="/" replace />;
+  const credential = localStorage.getItem('credential');
+  if (!credential) {
+    dispatch({ type: 'BELUM_MASUK' });
+    return <Navigate to="/" replace />;
+  }
 
   const getID = (id) => {
     navigate(`/DetailPage/${id}`);
