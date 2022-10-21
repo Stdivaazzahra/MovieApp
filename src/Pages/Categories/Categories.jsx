@@ -59,7 +59,7 @@ const Categories = () => {
         </div>
       </div>
       <div className="Search_wrap">
-        <h1>Showing Movies With "{genres.replace(genres.charAt(0), genres.charAt(0).toUpperCase())}" Genre</h1>
+        <h1 className="text-[2em]">Showing Movies With "{genres.replace(genres.charAt(0), genres.charAt(0).toUpperCase())}" Genre</h1>
       </div>
 
       <Swiper
