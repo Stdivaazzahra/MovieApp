@@ -81,7 +81,7 @@ const HomePage = () => {
           <img src={image} alt="Img HomePage" />
         </div>
         <div className="HomePage_Text">
-          <motion.h1 initial={{ x: '-100vw' }} animate={{ x: 0 }} transition={{ duration: 0.5, delay: 0.5 }} className="text-red-600 font-extrabold">
+          <motion.h1 initial={{ x: '-100vw' }} animate={{ x: 0 }} transition={{ duration: 0.5, delay: 0.5 }} className="text-red-600 font-bold">
             Doctor Strange in the Multiverse of Madness
           </motion.h1>
           <motion.p initial={{ x: '-100vw' }} animate={{ x: 0 }} transition={{ duration: 0.5, delay: 0.59 }}>

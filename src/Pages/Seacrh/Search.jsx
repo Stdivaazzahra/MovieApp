@@ -32,7 +32,7 @@ const Search = () => {
 
   return (
     <div className="Search_wrap">
-      <h1 className="text-[3em] p-0">Search Result "{name}"</h1>
+      <h1 className="text-[2.5rem] p-0">Search Result "{name}"</h1>
       <div className="search_item_wrap">
         {data ? (
           data.map((item, i) => {
