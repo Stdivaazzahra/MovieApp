@@ -15,12 +15,8 @@
   display: flex;
   justify-content: center;
   width: 100%;
-  /* height: 780px; */
   height: 100vh;
   object-fit: cover;
-  /* overflow: hidden; */
-  /* height: 700px; */
-  /* background-size: 100% 100%; */
 }
 
 div.HomePage_Text {
@@ -67,18 +63,14 @@ div.HomePage_Text {
   text-decoration: none;
   color: white;
   padding-left: 1rem;
-  /* padding-top: 3rem; */
 }
 
 .icon_play_home {
-  /* color: black; */
   font-size: 1.5rem;
 }
 
 .popular_wrap {
   width: 100%;
-  /* position: relative; */
-  /* margin: 0 50px; */
 }
 
 .popular_text {
@@ -115,15 +107,12 @@ div.HomePage_Text {
 }
 
 .Popular_item {
-  /* width: 100%; */
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
   gap: 1rem;
-  /* padding: 10px 55px; */
   padding: 1rem 2rem 2.5rem 2.5rem;
-  /* width: 20px; */
 }
 
 .Popular_menu {
@@ -150,9 +139,6 @@ div.HomePage_Text {
   width: 100%;
   font-family: 'Cabin', sans-serif;
   cursor: pointer;
-  /* justify-content: center; */
-  /* padding: 7px; */
-  /* position: absolute; */
 }
 
 .dec {
@@ -211,7 +197,6 @@ div.HomePage_Text {
 }
 
 div.CateBtn_Wrap {
-  /* width: 100%; */
   margin: 0;
   padding: 0;
   display: flex;
@@ -225,7 +210,6 @@ div.CateBtn_Wrap {
   gap: 1rem;
 }
 .cate_btn button {
-  /* color: rgb(182, 24, 24); */
   width: 8.3rem;
   font-family: 'Cabin', sans-serif;
   font-size: 0.9rem;
@@ -251,10 +235,8 @@ div.swiper {
 
 .swiper-slide {
   text-align: center;
-  /* font-size: 18px; */
   background: #fff;
 
-  /* Center slide text vertically */
   display: -webkit-box;
   display: -ms-flexbox;
   display: -webkit-flex;
@@ -268,10 +250,3 @@ div.swiper {
   -webkit-align-items: center;
   align-items: center;
 }
-
-/* .swiper-slide img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-} */
