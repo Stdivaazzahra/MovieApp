@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Cabin:wght@400;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@400;600;700&display=swap');
 
 * {
   margin: 0;
@@ -23,8 +23,8 @@
   /* background-size: 100% 100%; */
 }
 
-.HomePage_Text {
-  font-family: "Cabin", sans-serif;
+div.HomePage_Text {
+  font-family: 'Cabin', sans-serif;
   z-index: 999;
   padding-left: 3rem;
   color: white;
@@ -82,7 +82,7 @@
 }
 
 .popular_text {
-  font-family: "Cabin", sans-serif;
+  font-family: 'Cabin', sans-serif;
   padding: 3rem;
   display: flex;
   justify-content: space-between;
@@ -99,7 +99,7 @@
 .All_Movie h2 {
   display: flex;
   justify-items: center;
-  font-family: "Cabin", sans-serif;
+  font-family: 'Cabin', sans-serif;
   text-decoration: none;
   color: black;
   transition: all 0.2s linear;
@@ -148,7 +148,7 @@
 
 .Popular_menu div {
   width: 100%;
-  font-family: "Cabin", sans-serif;
+  font-family: 'Cabin', sans-serif;
   cursor: pointer;
   /* justify-content: center; */
   /* padding: 7px; */
@@ -227,7 +227,7 @@ div.CateBtn_Wrap {
 .cate_btn button {
   /* color: rgb(182, 24, 24); */
   width: 8.3rem;
-  font-family: "Cabin", sans-serif;
+  font-family: 'Cabin', sans-serif;
   font-size: 0.9rem;
   border: solid rgb(182, 24, 24);
   padding: 0.5rem 1rem;

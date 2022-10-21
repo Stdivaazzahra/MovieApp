@@ -17,12 +17,16 @@ import 'swiper/css/pagination';
 
 // import required modules
 import { Autoplay, Pagination, Navigation } from 'swiper';
+import { useContext } from 'react';
+import { ContextAccses } from '../../App';
+import { delay, motion } from 'framer-motion';
 
 const Detail = () => {
   const [data, setData] = useState();
   const [video, setVideo] = useState();
   const [cast, setCast] = useState();
   const [open, setOpenVideo] = useState(false);
+  const { dispatch } = useContext(ContextAccses);
 
   const { id } = useParams();
 
@@ -62,101 +66,108 @@ const Detail = () => {
       .catch((err) => console.log(err));
   }, [API_Cast]);
   //CEK TOKEN
-  const token = localStorage.getItem('token');
-  if (!token) return <Navigate to="/" replace />;
+  const credential = localStorage.getItem('credential');
+  if (!credential) {
+    dispatch({ type: 'BELUM_MASUK' });
+    return <Navigate to="/" replace />;
+  }
   const openVideo = () => {
     setOpenVideo((prev) => !prev);
   };
   return (
-    <div className="detail_wrap">
-      <div className="background_Detail">
-        <div className="detail_item">
-          <img src={API_IMG + `${data?.backdrop_path}`} alt="Background_Detail" />
-          <div className="detail_text">
-            <h1>{data?.title}</h1>
-            <h3 key={data?.id}>
-              {data?.genres.map((e) => {
-                return (
-                  <span key={e.id} className="genre">
-                    {e.name}
+    <>
+      {data && (
+        <motion.div className="detail_wrap" initial={{ scale: 0 }} animate={{ scale: 1 }} layoutId={data?.id}>
+          <div className="background_Detail">
+            <div className="detail_item">
+              <img src={API_IMG + `${data?.backdrop_path}`} alt="Background_Detail" />
+              <motion.div initial={{ x: '-100vw', opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ delay: 0.3, duration: 0.5 }} className="detail_text">
+                <h1>{data?.title}</h1>
+                <h3 key={data?.id}>
+                  {data?.genres.map((e) => {
+                    return (
+                      <span key={e.id} className="genre">
+                        {e.name}
+                      </span>
+                    );
+                  })}
+                </h3>
+                <p>{data?.overview}</p>
+                <h3>
+                  {' '}
+                  <span className="start_icon">
+                    {' '}
+                    <BiStar />{' '}
                   </span>
-                );
-              })}
-            </h3>
-            <p>{data?.overview}</p>
-            <h3>
-              {' '}
-              <span className="start_icon">
-                {' '}
-                <BiStar />{' '}
-              </span>
-              {data?.vote_average.toFixed(1)}
-            </h3>
-            <button onClick={openVideo} className="yt_det">
-              <AiOutlinePlayCircle className="icon_play" />
-              <span>Watch</span>
-            </button>
-          </div>
-        </div>
-        <div className={`video ${open ? 'open' : ''}`}>
-          {video && (
-            <div className="wrapper_video">
-              <video className="video__" Autoplay="false" src={`https://www.themoviedb.org/video/play?key=${video[0]?.key}`} frameBorder="0" title="link video"></video>
+                  {data?.vote_average.toFixed(1)}
+                </h3>
+                <button onClick={openVideo} className="yt_det">
+                  <AiOutlinePlayCircle className="icon_play" />
+                  <span>Watch</span>
+                </button>
+              </motion.div>
             </div>
-          )}
-          <span onClick={openVideo}>
-            {' '}
-            <RiCloseCircleLine className="close" />{' '}
-          </span>
-        </div>
-      </div>
-
-      <div className="cast">
-        <div className="Cast_Text">
-          <h1> Cast and Crew Info</h1>
-        </div>
-
-        <Swiper
-          slidesPerView={5}
-          spaceBetween={30}
-          slidesPerGroup={1}
-          loop={true}
-          loopFillGroupWithBlank={true}
-          pagination={{
-            clickable: true,
-          }}
-          navigation={true}
-          modules={[Autoplay, Pagination, Navigation]}
-          autoplay={{
-            delay: 3500,
-            disableOnInteraction: false,
-          }}
-          className="mySwiper"
-        >
-          <div className="cast_wrap">
-            {cast ? (
-              cast.map((e) => {
-                return (
-                  <SwiperSlide>
-                    <div className="cast_menu">
-                      <div className="img_cast">
-                        <img src={API_IMG + `${e.profile_path}`} alt="IMG Cast" />
-                      </div>
-                      <div className="cast_text">
-                        <h2>{e.name}</h2>
-                        <h3>{e.character}</h3>
-                      </div>
-                    </div>
-                  </SwiperSlide>
-                );
-              })
-            ) : (
-              <h2>Loading...</h2>
-            )}
+            <div className={`video ${open ? 'open' : ''}`}>
+              {video && (
+                <div className="wrapper_video">
+                  <video className="video__" Autoplay="false" src={`https://www.themoviedb.org/video/play?key=${video[0]?.key}`} frameBorder="0" title="link video"></video>
+                </div>
+              )}
+              <span onClick={openVideo}>
+                {' '}
+                <RiCloseCircleLine className="close" />{' '}
+              </span>
+            </div>
           </div>
-        </Swiper>
-      </div>
-    </div>
+
+          <div className="cast">
+            <div className="Cast_Text">
+              <h1> Cast and Crew Info</h1>
+            </div>
+
+            <Swiper
+              slidesPerView={5}
+              spaceBetween={30}
+              slidesPerGroup={1}
+              loop={true}
+              loopFillGroupWithBlank={true}
+              pagination={{
+                clickable: true,
+              }}
+              navigation={true}
+              modules={[Autoplay, Pagination, Navigation]}
+              autoplay={{
+                delay: 3500,
+                disableOnInteraction: false,
+              }}
+              className="mySwiper"
+            >
+              <div className="cast_wrap">
+                {cast ? (
+                  cast.map((e) => {
+                    return (
+                      <SwiperSlide>
+                        <div className="cast_menu">
+                          <div className="img_cast">
+                            <img src={API_IMG + `${e.profile_path}`} alt="IMG Cast" />
+                          </div>
+                          <div className="cast_text">
+                            <h2>{e.name}</h2>
+                            <h3>{e.character}</h3>
+                          </div>
+                        </div>
+                      </SwiperSlide>
+                    );
+                  })
+                ) : (
+                  <h2>Loading...</h2>
+                )}
+              </div>
+            </Swiper>
+          </div>
+        </motion.div>
+      )}
+    </>
   );
 };
 
