@@ -19,7 +19,7 @@ import { Autoplay, Pagination, Navigation } from 'swiper';
 import Alert from '../../components/Alert';
 import { useContext } from 'react';
 import { ContextAccses } from '../../App';
-import { AnimatePresence, delay, motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 
 const HomePage = () => {
   const API_IMG = 'https://image.tmdb.org/t/p/w500/';

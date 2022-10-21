@@ -1,7 +1,7 @@
 import axios from 'axios';
 import './Search.css';
-import React, { useContext, useEffect, useState } from 'react';
-import { Link, Navigate, useNavigate, useParams } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Link, Navigate, useParams } from 'react-router-dom';
 import '../HomePage/HomePage.css';
 import spiner from '../../assets/spin-loader.gif';
 import { motion } from 'framer-motion';

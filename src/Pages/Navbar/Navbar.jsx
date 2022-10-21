@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { BiSearchAlt } from 'react-icons/bi';
 import './Navbar.css';
-import { Link, Navigate, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Login from '../Login/Login';
 import Register from '../Register/Register';
 import { GoogleOAuthProvider } from '@react-oauth/google';

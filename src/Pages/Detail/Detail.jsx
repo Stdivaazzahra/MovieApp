@@ -19,7 +19,7 @@ import 'swiper/css/pagination';
 import { Autoplay, Pagination, Navigation } from 'swiper';
 import { useContext } from 'react';
 import { ContextAccses } from '../../App';
-import { delay, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 const Detail = () => {
   const [data, setData] = useState();
