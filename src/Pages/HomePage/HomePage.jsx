@@ -33,11 +33,13 @@ const HomePage = () => {
   const navigate = useNavigate();
   const [data, setData] = useState();
   const [cate, setCate] = useState();
+
   useEffect(() => {
     setTimeout(() => {
       dispatch({ type: 'RESET' });
     }, 5000);
   }, [dispatch, state.isMasuk]);
+
   useEffect(() => {
     axios
       .get(API_POPULAR)

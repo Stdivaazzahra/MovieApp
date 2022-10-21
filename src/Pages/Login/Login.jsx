@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
 import './Login.css';
 import { AiOutlineMail } from 'react-icons/ai';
-// import { FiEye } from 'react-icons/fi';
 import { FiEyeOff } from 'react-icons/fi';
 import { CgCloseO } from 'react-icons/cg';
-// import { FiEyeOff } from 'react-icons/fi';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { GoogleOAuthProvider } from '@react-oauth/google';
@@ -40,26 +38,11 @@ const Login = ({ open, onClose }) => {
       .catch((err) => setMsg('Email atau Password anda salah!'));
   };
 
-  // const dataGlg = (e) => {
-  //       localStorage.setItem('token', e.credentialResponse.credential);
-  //       localStorage.setItem('first_name', e.given_name);
-  //       onClose(false);
-  //       navigate('/');
-  // };
-
   if (msg) {
     setTimeout(() => {
       setMsg('');
     }, 10000);
   }
-
-  // useEffect(() => {
-  //   // Global Google
-  //   google.accounts.id.renderButton(
-  //     document.getElementById("GoogleOAuthProvider"),
-  //     { shape: 'pill', theme: 'filled_black'}
-  //   );
-  // }, [])
 
   if (!open) return null;
   return (
