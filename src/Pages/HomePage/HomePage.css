@@ -236,7 +236,6 @@ div.swiper {
 .swiper-slide {
   text-align: center;
   background: #fff;
-
   display: -webkit-box;
   display: -ms-flexbox;
   display: -webkit-flex;
