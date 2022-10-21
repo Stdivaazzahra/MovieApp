@@ -5,6 +5,7 @@ import { Link, Navigate } from 'react-router-dom';
 import image2 from './../Images/Header3.jpg';
 import spiner from '../../assets/spin-loader.gif';
 import { ContextAccses } from '../../App';
+import { motion } from 'framer-motion';
 // import '../AllMovie/AllMovie.css'
 
 const AllMovie = () => {
@@ -44,16 +45,18 @@ const AllMovie = () => {
       </div>
       <div className="Popular_item_wrap_all">
         {data ? (
-          data.map((item) => {
+          data.map((item, i) => {
             return (
-              <Link key={item.id} className="Popular_menu_all" to={`/DetailPage/${item.id}`}>
-                {!imageLoaded && <img className="spin-loader" src={spiner} alt="spin loader" />}
-                <img className="poster_all" onLoad={handleImageLoaded} src={API_IMG + `${item.poster_path}`} alt="Movie Popular" />
-                <div className="dec">
-                  <h3>{item.title}</h3>
-                  <h4>{item.release_date}</h4>
-                </div>
-              </Link>
+              <motion.div initial={{ x: i % 2 === 0 ? '-100vw' : '100vw' }} animate={{ x: 0 }} transition={{ duration: 0.3, delay: i * 0.05 }} exit={{ x: i % 2 === 0 ? '-100vw' : '100vw' }}>
+                <Link key={item.id} className="Popular_menu_all" to={`/DetailPage/${item.id}`}>
+                  {!imageLoaded && <img className="spin-loader" src={spiner} alt="spin loader" />}
+                  <img className="poster_all" onLoad={handleImageLoaded} src={API_IMG + `${item.poster_path}`} alt="Movie Popular" />
+                  <div className="dec">
+                    <h3>{item.title}</h3>
+                    <h4>{item.release_date}</h4>
+                  </div>
+                </Link>
+              </motion.div>
             );
           })
         ) : (
