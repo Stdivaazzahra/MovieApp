@@ -93,7 +93,10 @@
   justify-content: space-between;
   text-shadow: 1px 2px 10px rgb(210, 81, 81);
 }
-
+.popular_text h1,
+.popular_text h2 {
+  text-shadow: 2px 2px 20px rgb(192, 41, 41);
+}
 .All_Movie {
   text-decoration: none;
   display: flex;
