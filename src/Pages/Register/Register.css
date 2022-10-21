@@ -2,7 +2,6 @@
 
 .wrap_form_Res {
   width: 35%;
-  /* height: 70vh; */
   padding: 2rem;
   font-family: 'Cabin', sans-serif;
   background-color: rgb(233, 232, 232);
@@ -15,7 +14,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 1000;
+  z-index: 1100;
   border-radius: 1rem;
   animation: appear 0.5s ease forwards;
 }

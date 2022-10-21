@@ -15,6 +15,8 @@ export const ContextAccses = createContext();
 //INISIALISASI
 const inisial = {
   isMasuk: '',
+  openLogim: false,
+  openRegis: false,
 };
 
 const reducer = (state, action) => {
@@ -26,6 +28,16 @@ const reducer = (state, action) => {
     case 'RESET':
       return {
         isMasuk: '',
+      };
+    case 'LOGIN':
+      return {
+        ...state,
+        openLogin: false,
+      };
+    case 'REGISTER':
+      return {
+        ...state,
+        openRegis: false,
       };
     default:
       return state;
