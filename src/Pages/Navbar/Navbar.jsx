@@ -46,6 +46,7 @@ const Navbar = () => {
       y: '-100vh',
     },
   };
+
   return (
     <motion.div className="navbar_wrap" variants={variantsNav} initial="hidden" animate="visible" exit="exit">
       <div className="navbar">
