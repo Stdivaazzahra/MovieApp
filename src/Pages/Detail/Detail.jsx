@@ -141,7 +141,7 @@ const Detail = () => {
                 disableOnInteraction: false,
               }}
               className="mySwiper"
-            >
+              >
               <div className="cast_wrap">
                 {cast ? (
                   cast.map((e) => {
@@ -159,8 +159,8 @@ const Detail = () => {
                       </SwiperSlide>
                     );
                   })
-                ) : (
-                  <h2>Loading...</h2>
+                  ) : (
+                    <h2>Loading...</h2>
                 )}
               </div>
             </Swiper>
