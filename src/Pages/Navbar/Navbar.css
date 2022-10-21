@@ -7,7 +7,7 @@
   width: 100%;
   position: fixed;
   overflow: hidden;
-  z-index: 999;
+  z-index: 10;
 }
 
 .navbar {

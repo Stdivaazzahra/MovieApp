@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Cabin:wght@400;600;700&display=swap');
 
 .wrap_form {
-  width: 35%;
+  width: 30%;
   font-family: 'Cabin', sans-serif;
   background-color: rgb(233, 232, 232);
   display: flex;
@@ -14,7 +14,7 @@
   padding: 2rem;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 1000;
+  z-index: 10000;
   border-radius: 1rem;
   animation: appear 0.5s ease forwards;
 }
@@ -106,10 +106,10 @@ input:focus {
   font-size: 1rem;
   margin: 0.5rem 0;
   width: 100%;
-  /* align-self: flex-start; */
+  align-self: flex-start;
   height: 2.5rem;
   border-radius: 5rem;
-  padding: 0 2rem;
+  padding: 0 1rem;
   background-color: rgba(182, 24, 24, 0.921);
   color: rgba(182, 24, 24, 0.921);
   border: solid rgb(182, 24, 24);
