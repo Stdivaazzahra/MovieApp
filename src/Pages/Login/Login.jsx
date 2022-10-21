@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useState } from 'react';
 import './Login.css';
 import { AiOutlineMail } from 'react-icons/ai';
 import { FiEyeOff } from 'react-icons/fi';
@@ -8,13 +8,11 @@ import { useNavigate } from 'react-router-dom';
 import { GoogleOAuthProvider } from '@react-oauth/google';
 import { GoogleLogin } from '@react-oauth/google';
 import jwt_decode from 'jwt-decode';
-import { ContextAccses } from '../../App';
 
 const Login = ({ open, onClose }) => {
   const navigate = useNavigate();
   const API_ENDPOINT = `https://notflixtv.herokuapp.com/api/v1/users/login`;
   const [msg, setMsg] = useState('');
-  const { state } = useContext(ContextAccses);
   const [data, setData] = useState({
     email: '',
     password: '',
