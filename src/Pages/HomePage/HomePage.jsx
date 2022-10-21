@@ -96,9 +96,9 @@ const HomePage = () => {
 
       <div className="popular_wrap">
         <div className="popular_text">
-          <h1>Popular Movie</h1>
+          <h1 className="text-[2em]">Popular Movie</h1>
           <Link to="/AllMovie" className="All_Movie">
-            <h2>
+            <h2 className="text-[2em]">
               See All Movie
               <span className="Arrow_icon">
                 <TiArrowRightOutline />
@@ -143,9 +143,9 @@ const HomePage = () => {
 
       <div className="popular_wrap">
         <div className="popular_text">
-          <h1>Browse by Genres</h1>
+          <h1 className="text-[2em]">Browse by Genres</h1>
           <Link to="/AllMovie" className="All_Movie">
-            <h2>
+            <h2 className="text-[2em] flex items-center">
               See All Movie
               <TiArrowRightOutline className="Arrow_icon" />
             </h2>
