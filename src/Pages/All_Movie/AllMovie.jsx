@@ -1,15 +1,17 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import './AllMovie.css';
 import axios from 'axios';
 import { Link, Navigate } from 'react-router-dom';
 import image2 from './../Images/Header3.jpg';
 import spiner from '../../assets/spin-loader.gif';
+import { ContextAccses } from '../../App';
 // import '../AllMovie/AllMovie.css'
 
 const AllMovie = () => {
   const API_ALL = 'https://api.themoviedb.org/3/movie/popular?api_key=9cc1bc46ae7070abb9a43667213d613a';
   const API_IMG = 'https://image.tmdb.org/t/p/w500/';
   const [imageLoaded, setImageLoaded] = useState(true);
+  const { dispatch } = useContext(ContextAccses);
   //UseState
   //UseEffect
   //axios
@@ -22,8 +24,11 @@ const AllMovie = () => {
       .catch((err) => console.log(err));
   }, []);
   //CEK TOKEN
-  const token = localStorage.getItem('token');
-  if (!token) return <Navigate to="/" replace />;
+  const credential = localStorage.getItem('credential');
+  if (!credential) {
+    dispatch({ type: 'BELUM_MASUK' });
+    return <Navigate to="/" replace />;
+  }
 
   const handleImageLoaded = () => {
     setImageLoaded(true);
