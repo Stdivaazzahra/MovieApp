@@ -89,7 +89,6 @@ const Navbar = () => {
             <>
               <span className="name"> {localStorage.getItem('given_name')} </span>
               <img className="avatar" src="https://i.pinimg.com/originals/87/25/26/87252688f7652c9e5c777e0c735cf4fb.jpg" alt="avatar user" />
-              {/* <img className="avatar" src="{localStorage.getItem('picture')}" alt="avatar user" /> */}
               <span
                 onClick={() => {
                   localStorage.clear();
