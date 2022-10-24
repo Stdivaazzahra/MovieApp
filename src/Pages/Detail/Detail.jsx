@@ -5,16 +5,11 @@ import './Detail.css';
 import { BiStar } from 'react-icons/bi';
 import { AiOutlinePlayCircle } from 'react-icons/ai';
 import { RiCloseCircleLine } from 'react-icons/ri';
-
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
-
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
-
-// import "./styles.css";
-
 // import required modules
 import { Autoplay, Pagination, Navigation } from 'swiper';
 import { useContext } from 'react';
@@ -131,9 +126,6 @@ const Detail = () => {
               slidesPerGroup={1}
               loop={true}
               loopFillGroupWithBlank={true}
-              pagination={{
-                clickable: true,
-              }}
               navigation={true}
               modules={[Autoplay, Pagination, Navigation]}
               autoplay={{
@@ -161,14 +153,15 @@ const Detail = () => {
                   })
                   ) : (
                     <h2>Loading...</h2>
-                )}
+                    )}
               </div>
             </Swiper>
           </div>
         </motion.div>
-      )}
-    </>
+      )
+      }
+  </>
   );
 };
-
+     
 export default Detail;

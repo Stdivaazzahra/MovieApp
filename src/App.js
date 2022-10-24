@@ -5,7 +5,6 @@ import HomePage from "./Pages/HomePage/HomePage";
 import Navbar from "./Pages/Navbar/Navbar";
 import Search from "./Pages/Seacrh/Search";
 import Categories from "./Pages/Categories/Categories";
-// import Categories from "./Pages/Categories/Categories";
 import Footer from "./Pages/Footer/Footer";
 import { createContext } from "react";
 import { useReducer } from "react";
@@ -58,11 +57,6 @@ function App() {
                 <Route path="/AllMovie" element={<AllMovie />} />
                 <Route path="/DetailPage/:id" element={<Detail />} replace />
                 <Route path="/Search/:name" element={<Search />} replace />
-                {/* <Route
-                  path="/Categories/:genres"
-                  element={<Categories />}
-                  replace
-                /> */}
                 <Route path="/Categories/:genres" element={<Categories />} />
               </Routes>
             </BrowserRouter>
