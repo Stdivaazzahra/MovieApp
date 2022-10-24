@@ -6,14 +6,11 @@ import { Link, useNavigate } from 'react-router-dom';
 import { TiArrowRightOutline } from 'react-icons/ti';
 import { AiOutlinePlayCircle } from 'react-icons/ai';
 import spiner from '../../assets/spin-loader.gif';
-
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
-
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
-
 // import required modules
 import { Autoplay, Pagination, Navigation } from 'swiper';
 import Alert from '../../components/Alert';
@@ -62,8 +59,8 @@ const HomePage = () => {
     navigate(`/DetailPage/${id}`);
   };
 
-  const getGendres = (gendres) => {
-    navigate(`/Categories/${gendres}`);
+  const getGendres = (genres) => {
+    navigate(`/Categories/${genres}`);
   };
 
   const handleImageLoaded = () => {
@@ -96,9 +93,9 @@ const HomePage = () => {
 
       <div className="popular_wrap">
         <div className="popular_text">
-          <h1 className="text-[2em]">Popular Movie</h1>
+          <h1 className="text-[1.3em]">Popular Movie</h1>
           <Link to="/AllMovie" className="All_Movie">
-            <h2 className="text-[2em] flex items-center">
+            <h2 className="text-[1.3em] flex items-center">
               See All Movie
               <span className="Arrow_icon">
                 <TiArrowRightOutline />
@@ -143,9 +140,9 @@ const HomePage = () => {
 
       <div className="popular_wrap">
         <div className="popular_text">
-          <h1 className="text-[2em] ">Browse by Genres</h1>
+          <h1 className="text-[1.3em] ">Browse by Genres</h1>
           <Link to="/AllMovie" className="All_Movie">
-            <h2 className="text-[2em] flex items-center">
+            <h2 className="text-[1.3em] flex items-center">
               See All Movie
               <TiArrowRightOutline className="Arrow_icon" />
             </h2>
