@@ -6,9 +6,6 @@
 .poster {
   animation: fadeIn 1s ease forwards;
 }
-.ended {
-  display: none;
-}
 
 @keyframes fadeIn {
   0% {
@@ -17,11 +14,4 @@
   100% {
     opacity: 1;
   }
-}
-
-.category_page {
-  padding-top: 6em;
-}
-.Search_wrap h1 {
-  text-shadow: 2px 2px 20px rgb(192, 41, 41);
 }

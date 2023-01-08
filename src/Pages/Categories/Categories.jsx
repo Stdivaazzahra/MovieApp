@@ -1,17 +1,13 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { useParams, useNavigate, Navigate } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import './Categories.css';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, Navigation } from 'swiper';  
 import CardList from './cardList/CardList';
-import { useContext } from 'react';
-import { ContextAccses } from '../../App';
-
 const Categories = () => {
   const navigate = useNavigate();
   const { genres } = useParams();
-  const { dispatch } = useContext(ContextAccses);
 
   const API_Cate = 'https://api.themoviedb.org/3/genre/movie/list?api_key=9cc1bc46ae7070abb9a43667213d613a&language=en-US';
   const API_SEARCH = 'https://api.themoviedb.org/3/search/movie?api_key=9cc1bc46ae7070abb9a43667213d613a&query=' + genres;
@@ -32,12 +28,6 @@ const Categories = () => {
       })
       .catch((err) => console.log(err));
   }, [API_Cate]);
-  //CEK TOKEN
-  const credential = localStorage.getItem('credential');
-  if (!credential) {
-    dispatch({ type: 'BELUM_MASUK' });
-    return <Navigate to="/" replace />;
-  }
     
   const getID = (id) => {
     navigate(`/DetailPage/${id}`);
@@ -48,19 +38,24 @@ const Categories = () => {
   };
 
   return (
-    <div className="category_page">
-      <div className="CateBtn_Wrap">
-        <div className="cate_btn">
+    <div className="category_page pt-[6em]">
+      <div className="CateBtn_Wrap m-0 p-0 flex justify-between">
+        <div className="cate_btn w-full flex flex-wrap gap-[1rem]">
           {cate &&
             cate.map((e) => (
-              <button key={e.id} onClick={() => getGendres(e.name.toLowerCase())}>
+              <button 
+                  key={e.id} 
+                  onClick={() => getGendres(e.name.toLowerCase())}
+                  className="BtnBorder TrnstionAll w-[8.3rem] text-[0.9rem] py-[0.5rem] px-[1rem] rounded-3xl cursor-pointer hover:text-white hover:bg-[#b61818] hover:BxShdow">
                 {e.name}
               </button>
             ))}
         </div>
       </div>
       <div className="Search_wrap">
-        <h1 className="text-[2.5em]">Showing Movies With "{genres.replace(genres.charAt(0), genres.charAt(0).toUpperCase())}" Genre</h1>
+        <h1 className="text-[2.1em] font-semibold ShadowText FontCb pl-[3rem] pb-[2rem] pr-[2rem]">
+          Showing Movies With " {genres.replace(genres.charAt(0), genres.charAt(0).toUpperCase())}" Genre
+        </h1>
       </div>
 
       <Swiper
@@ -77,7 +72,7 @@ const Categories = () => {
         }}
         className="mySwiper"
       >
-        <div className="Popular_item">
+        <div className="Popular_item flex flex-row flex-wrap justify-center gap-[1rem]">
           {data?.map((item) => {
             return (
               <SwiperSlide>

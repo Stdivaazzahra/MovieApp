@@ -1,78 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@400;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Cabin:wght@400;600;700&display=swap");
 
 .wrap_form_Res {
-  width: 35%;
-  padding: 2rem;
-  font-family: 'Cabin', sans-serif;
-  background-color: rgb(233, 232, 232);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 0;
-  position: fixed;
-  top: 50%;
-  left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 1100;
-  border-radius: 1rem;
   animation: appear 0.5s ease forwards;
-}
-.wrapper_form {
-  width: 100%;
-}
-div.item_form_Res {
-  width: 90%;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-.item_form_Res h1 {
-  font-size: 1.2rem;
-  padding-bottom: 1rem;
-}
-
-.input_img {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.iconUser {
-  width: 7rem;
-  height: 7rem;
-}
-
-input[type='file'] {
-  position: absolute;
-  top: 10%;
-  left: 50%;
-  z-index: 99;
-  /* overflow: hidden; */
-  /* width: 2rem; */
-  /* font-size: 1rem; */
-  transform: scale(0);
-  opacity: 0;
-  cursor: pointer;
-}
-
-.iconCamera {
-  font-size: 2rem;
-  position: absolute;
-  color: rgb(197, 18, 18);
-  /* text-shadow: 2px 2px 5px rgba(16, 16, 16, 0.589); */
-  top: 23%;
-  left: 53%;
-  cursor: pointer;
-}
-
-.preview_Img {
-  width: 93.34px;
-  height: 93.34px;
-  object-fit: cover;
-  border-radius: 50%;
 }
 
 @keyframes appear {

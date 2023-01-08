@@ -1,127 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@400;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Cabin:wght@400;600;700&display=swap");
 
 .wrap_form {
-  width: 30%;
-  font-family: 'Cabin', sans-serif;
-  background-color: rgb(233, 232, 232);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 0;
-  position: fixed;
-  top: 50%;
-  padding: 2rem;
-  left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 10000;
-  border-radius: 1rem;
   animation: appear 0.5s ease forwards;
-}
-
-div.item_form {
-  width: 90%;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-.item_form h1 {
-  font-size: 1.2rem;
-  padding-bottom: 1rem;
-}
-
-.icon_close {
-  font-size: 1.5rem;
-  cursor: pointer;
-}
-
-.icon_close:hover {
-  color: rgb(181, 14, 14);
-}
-
-hr {
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-  border-color: rgba(198, 193, 193, 0.397);
-  margin-bottom: 0.3rem;
-}
-
-form {
-  margin: 0;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-input {
-  width: 100%;
-  border: none;
-}
-
-input:focus {
-  outline: none;
-  /* color: white; */
-  /* border: solid rgb(182, 24, 24); */
-}
-
-.input_box {
-  display: flex;
-  align-items: center;
-  transition: all 0.2s linear;
-  width: 100%;
-  height: 2.5rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  border-radius: 5rem;
-  margin: 0.6rem 0;
-  border: solid rgba(0, 0, 0, 0.199);
-  font-family: 'Cabin', sans-serif;
-  font-size: 1rem;
-  background-color: white;
-  /* height: 100%; */
-}
-
-.input_box:hover {
-  border: solid rgb(182, 24, 24);
-}
-
-.input_box .icon_form {
-  left: 23rem;
-  top: 1.2rem;
-  font-size: 1.3rem;
-}
-.pass_box .icon_form {
-  position: absolute;
-  left: 23rem;
-  top: 1.2rem;
-  font-size: 1.3rem;
-}
-
-.button {
-  font-family: 'Cabin', sans-serif;
-  font-size: 1rem;
-  margin: 0.5rem 0;
-  width: 100%;
-  align-self: flex-start;
-  height: 2.5rem;
-  border-radius: 5rem;
-  padding: 0 1rem;
-  background-color: rgba(182, 24, 24, 0.921);
-  color: rgba(182, 24, 24, 0.921);
-  border: solid rgb(182, 24, 24);
-  transition: all 0.2s linear;
-  cursor: pointer;
-}
-
-.button:hover {
-  background-color: rgb(181, 14, 14);
-  font-weight: bolder;
-  color: white;
-  box-shadow: 2px 2px 5px rgba(255, 3, 3, 0.589);
 }
 
 @keyframes appear {
@@ -148,27 +29,6 @@ input:focus {
   right: -90%;
 }
 
-.googleBtn {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  margin-bottom: 1rem;
-}
-
-.buttonLog:hover {
-  background-color: rgb(181, 14, 14);
-  font-weight: bolder;
-  color: black;
-  box-shadow: 2px 2px 5px rgba(255, 3, 3, 0.589);
-}
-
-article {
-  display: flex;
-  align-items: center;
-  font-size: 1rem;
-}
 .qJTHM {
   margin: 0;
 }
